@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <!-- Rick Yost
-Date
-Assignment -->
+28 Feb 2018
+jQuery Assignment -->
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>jQuery Functions</title>
 <!-- 	<link rel="stylesheet" type="text/css" href=""> -->
 	<style>
+		
 		.bcolor {
 			color: blue;
 		}
@@ -16,6 +17,15 @@ Assignment -->
 		}
 		div {
 			border-top: 5px solid black;
+		}
+		.grey {
+			background-color: grey;
+		}
+		.white {
+			background-color: white;
+		}
+		.purple {
+			color: purple;
 		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -29,8 +39,22 @@ Assignment -->
   				$( "#coexist" ).slideToggle( "slow", function() {
 				 });
 			});
+			$(".polcor").click(function() {
+				$("#coexist").hide();
+			});
 			$(".pend").click(function() {
 				$(".addhere").append("  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.");
+			});
+			$( "body" ).hover(function() {
+				$(this).addClass("grey");}, function() {
+					$(this).removeClass("grey"); }
+				);
+			$(".BGC").click(function() {
+				$("h1").after(" and .after");
+			});
+			
+			$(".clear").click(function() {
+				$( "div" ).html( "<span class='purple'>Skol Vikings!!</span>" );
 			});
 		})
 	</script>
@@ -43,6 +67,7 @@ Assignment -->
 	</div>
 	<div class="slidetoggle">
 		<button class="slide">Slide toggle</button>
+		<button class="polcor">Hide</button>
 		<h1>Slide toggle</h1>
 		<p>Click the button to to slidetoggle a hidden image.</p>
 		<img id="coexist" src="CoExist.jpg" alt="CoExist" width="600">
@@ -52,5 +77,12 @@ Assignment -->
 		<h1>Append</h1>
 		<p class="addhere">Click the button to append a new paragraph.</p>
 	</div>
+	<div class="backcolor">
+		<button class="BGC">After</button>
+		<h1>Hover</h1>
+		<p>Hover to change color.</p>
+	</div>
+	<button class="clear">Clear</button>
+
 </body>
 </html>
