@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Rick Yost
+Date
+Assignment -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<!-- 	<link rel="stylesheet" type="text/css" href=""> -->
+	<style>
+
+		table {
+			border: 3px solid grey;
+			margin: 30px;
+		}
+		thead {
+			font-weight: bold;
+		}
+		td {
+			padding-right: 40px;
+		}
+		form {
+			display: inline-block;
+			border-top: 3px solid black;
+			text-align: right;
+		}
+		input {
+			display: inline-block;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		"use strict";
+
+		$(document).ready(function() {
+			$("#doit").click(function(){
+	            var fname = $("#fname").val();
+	            var lname = $("#lname").val();
+	            var email = $("#email").val();
+	            var phone = $("#phone").val();
+	            var markup = "<tr><td>" + fname + "</td><td>" + lname + "</td><td>" + email + "</td><td>" + phone + "</td></tr>";
+            $("table tbody").append(markup);
+        	});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Email Address</td>
+				<td>Contact#</td>
+			</tr>
+		</thead>
+		<tbody>	
+		</tbody>
+	</table>
+	<h1>Add User</h1>
+	<form id="user" name="User" method="post" action="">
+		<p></p>
+		First Name:<input type="text" name="First Name" id="fname">
+		<p></p>
+		Last Name:<input type="text" name="Last Name" id="lname">
+		<p></p>
+		Email Address:<input type="text" name="Email Address" id="email">
+		<p></p>
+		Contacts#:<input type="text" name="Contact#" id="phone">
+		<p></p>
+		<input type="button" value="Add User" name="Add User" id="doit">
+		<!-- <button>Add User</button> -->
+	</form>
+
+</body>
+</html>
